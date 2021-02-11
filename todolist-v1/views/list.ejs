@@ -1,0 +1,26 @@
+<%- include('header'); -%>
+
+    <!-- read about ejs tags before using .There are different tags used here -->
+    <!-- Scriplet tag -->
+    <div class="box" id="heading">
+        <h1>
+            <%= listTitle %>
+        </h1>
+
+    </div>
+
+    <div class="box">
+        <% for (let i=0;i<newListItems.length;i++){ %>
+            <div class="item">
+                <input type="checkbox" name="" id="">
+                <p>
+                    <%=newListItems[i] %>
+                </p>
+            </div>
+            <% } %>
+                <form class="item" action="/" method="POST">
+                    <input type="text" name="nextItem" placeholder="Next item" autocomplete="off">
+                    <button type="submit" name="list" value=<%=listTitle%>>+</button>
+                </form>
+    </div>
+    <%- include('footer'); -%>
